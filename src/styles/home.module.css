@@ -1,0 +1,43 @@
+.home {
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 40px 0
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+
+    .profileName {
+        font-size: 2rem;
+    }
+}
+
+.detailsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    align-items: center;
+}
+
+.emailButton {
+    padding: 10px;
+    margin: 10px;
+    outline: none;
+    border: 3px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.emailButton:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+    background-color: #8ca9ff5c;
+    transform: filter;
+    transition-duration: .5s;
+}
