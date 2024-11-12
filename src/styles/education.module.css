@@ -1,13 +1,14 @@
 .education {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .educationContainer {
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
-    gap: 30px;
+    /* gap: 30px; */
     animation: fadeIn 3s;
     margin-bottom: 30px;
     max-width: 500px;
@@ -24,10 +25,10 @@
 .school {
     border: 3px solid white;
     border-radius: 3px;
-    width: 400px;
+    max-width: 400px;
     /* height: 300px; */
 
-    /* padding: 0 20px 10px 20px; */
+    padding: 0 20px 10px 20px;
     
     /* -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
@@ -41,6 +42,17 @@
         /* width: 90%; */
         height: 100%;
     }
+    .education {
+        width: 90%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .education {
+        align-items: stretch;
+    }
+    
+
   }
 
   

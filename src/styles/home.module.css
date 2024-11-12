@@ -34,6 +34,7 @@
     justify-content: center;
     width: 60%;
     align-items: center;
+    gap: 30px;
     animation: fadeIn 3s;
 }
 

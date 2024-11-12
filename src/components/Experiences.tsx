@@ -92,7 +92,7 @@ export default function Experiences() {
   return (
     <>
     <h2>Experiences</h2>
-    <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "30px", }}>
+    <div className={styles.experience} >
     
     {experiences.map((m, index) => 
         <div key={m.id} className={styles.experienceCard}>

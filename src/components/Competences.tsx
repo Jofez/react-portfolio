@@ -18,17 +18,17 @@ export default function Competences() {
         },
         {
             id: 2,
-            name: "Javascript",
-            type: "Language"
-        },
-        {
-            id: 3,
             name: "C#",
             type: "Language"
         },
         {
-            id: 4,
+            id: 3,
             name: ".NET",
+            type: "Language"
+        },
+        {
+            id: 4,
+            name: "Javascript",
             type: "Language"
         },
         {
@@ -43,26 +43,33 @@ export default function Competences() {
         },
         {
             id: 7,
-            name: "HTML",
-            type: "Language"
-        },
-        {
-            id: 8,
-            name: "CSS",
-            type: "Language"
-        },
-        {
-            id: 9,
-            name: "SCSS",
-            type: "Language"
-        },
-        {
-            id: 10,
             name: "Vue.js",
             type: "Language"
         },
         {
+            id: 8,
+            name: "Lit",
+            type: "Language"
+        },
+
+        {
+            id: 9,
+            name: "HTML",
+            type: "Language"
+        },
+        {
+            id: 10,
+            name: "CSS",
+            type: "Language"
+        },
+        {
             id: 11,
+            name: "SCSS",
+            type: "Language"
+        },
+
+        {
+            id: 12,
             name: "SQL",
             type: "Language"
         },
@@ -91,6 +98,11 @@ export default function Competences() {
         {
             id: 33,
             name: "Ignition",
+            type: "Tool"
+        },
+        {
+            id: 34,
+            name: "GitHub",
             type: "Tool"
         },
     ]
