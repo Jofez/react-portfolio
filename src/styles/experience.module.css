@@ -90,14 +90,9 @@ hr {
 }
 
 .competenceContent {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px; */
-
- h4 {
-    margin: 0;
- }
+    h4 {
+        margin: 0;
+    }
     
 }
 

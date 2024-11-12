@@ -8,13 +8,17 @@ export default function Home() {
         name: string
         title: string
         about: string
+        email: string
+        emailText: string
     }
 
     const profile: ProfileProps = {
         id: 1,
         name: "Josef Holmberg",
         title: "Systemutvecklare",
-        about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i Javascript"
+        about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i Javascript-ramverk som t.ex. React",
+        email: "mailto:josefholmberg@hotmail.com",
+        emailText: "Maila mig!"
     }
 
   return (
@@ -27,8 +31,8 @@ export default function Home() {
  
         <div className={styles.detailsDiv}>
             <code>{profile.about}</code>
-            <a  href='mailto:josefholmberg@hotmail.com'>
-                <button className={styles.emailButton} >Maila mig!</button>
+            <a  href={profile.email}>
+                <button className={styles.emailButton} >{profile.emailText}</button>
             </a>
 
         </div>

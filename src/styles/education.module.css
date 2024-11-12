@@ -1,3 +1,8 @@
+.education {
+    display: flex;
+    flex-direction: column;
+}
+
 .educationContainer {
     display: flex;
     justify-content: center;
@@ -5,6 +10,7 @@
     gap: 30px;
     animation: fadeIn 3s;
     margin-bottom: 30px;
+    max-width: 500px;
 }
 
 @keyframes fadeIn {
@@ -12,15 +18,35 @@
     100% { opacity: 1; }
   }
 
+
+
+
 .school {
     border: 3px solid white;
     border-radius: 3px;
     width: 400px;
     /* height: 300px; */
-    padding: 0 20px 10px 20px;
+
+    /* padding: 0 20px 10px 20px; */
+    
     /* -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75); */
     background-color: transparent;
     /* hsl(184.88deg 96.61% 24.83% / 73%) */
+}
+
+@media (max-width: 768px) {
+    .school {
+        /* width: 90%; */
+        height: 100%;
+    }
+  }
+
+  
+  @media (min-width: 1200px) {
+    .school {
+        width: 500px;
+        max-width: none;
+    }
 }

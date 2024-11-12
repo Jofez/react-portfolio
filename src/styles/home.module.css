@@ -3,18 +3,29 @@
     display: flex;
     flex-direction: row;
     gap: 40px;
-    margin: 40px 0
+    margin: 40px 0;
+
+
+
 }
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
 .profile {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 40%;
-
+    animation: fadeIn 1.5s;
+    gap: 30px;
     .profileName {
         font-size: 2rem;
     }
+    
 }
 
 .detailsDiv {
@@ -23,6 +34,7 @@
     justify-content: center;
     width: 60%;
     align-items: center;
+    animation: fadeIn 3s;
 }
 
 .emailButton {
@@ -40,4 +52,20 @@
     background-color: #8ca9ff5c;
     transform: filter;
     transition-duration: .5s;
+}
+
+
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        align-items: center
+    }
+    .profile {
+        width: 90%;
+    }
+    .detailsDiv {
+        width: 80%
+    }
+
 }
