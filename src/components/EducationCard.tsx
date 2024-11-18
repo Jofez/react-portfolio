@@ -44,15 +44,18 @@ export default function EducationCard() {
 
   return (
     <>
-    <div className={styles.educationContainer}>
-
+    <div className="flex justify-center flex-col-reverse gap-7 mb-7 max-w-lg ">
+        {/* {styles.educationContainer} */}
         {education.map((edu, index) => 
-            <div className={styles.school} key={index}>
+            <div className="lg:w-[500px] h-full  border-[3px] border-white rounded-[3px] px-5 pt-0 pb-2 bg-transparent" 
+                key={index}
+            >
+                {/* {styles.school} */}
                 {/* <img src={githubLogo} style={{ height: "50px", width: "50px"}} /> */}
-                <h2>{edu.school}</h2>
+                <h2 className='text-custom-heading-fs p-2'>{edu.school}</h2>
                 <hr></hr>
-                <p>{edu.program}</p>
-                <p>{edu.level}</p>
+                <p className='text-custom-subheading-fs' >{edu.program}</p>
+                <p className='text-custom-p-fs' >{edu.level}</p>
                 <p>{formatDate(edu.startYear)} - {formatDate(edu.endYear)}</p>
             </div>
         )}

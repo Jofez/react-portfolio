@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/footer.module.css'
 import githubLogo from "../images/github-mark.svg"
 import linkedInLogo from "../images/LinkedIn_icon.svg"
@@ -8,25 +8,47 @@ export default function Footer() {
     const [linkedInLink, setLinkedInLink] = useState("https://www.linkedin.com/in/josef-holmberg-2a8983195/")
     const [gitHubLink, setGitHubLink] = useState("https://github.com/Jofez/")
     const [name, setName] = useState("Josef Holmberg")
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
-    let year = new Date().getFullYear()
-    console.log(year)
+    useEffect(() => {
+        const now = new Date();
+        setCurrentYear(now.getFullYear())
+    }, [])
 
 
   return (
-    <div className={styles.footer}>
+    <div className="grid h-60 bg-footer-color"
+    // {styles.footer}
+    >
 
-        <ul className={styles.footerIcons}>
-            <a className={styles.footerLink} href={gitHubLink} target="_blank" rel="noopener noreferrer">
-                <img id={styles.gitHubImage}  className={styles.footerImage} alt="GitHub logo" src={githubLogo} />
+        <ul className="list-none flex justify-center items-center m-0 px-0 py-2"
+        // {styles.footerIcons}
+        >
+            <a className=""
+            // {styles.footerLink}
+             href={gitHubLink} target="_blank" rel="noopener noreferrer">
+                <img
+                    className="h-14 w-14 mx-5 my-0  hover:opacity-50" //grayscale-1  hover:invert
+                    // {styles.footerImage}
+                    alt="GitHub logo"
+                    src={githubLogo}
+                />
                 
             </a>
-            <a className={styles.footerLink} href={linkedInLink} target="_blank" rel="noopener noreferrer" >
-                <img className={styles.footerImage} alt="LinkedIn logo" src={linkedInLogo} />
+            <a className=""
+            // {styles.footerLink}
+                href={linkedInLink} target="_blank" rel="noopener noreferrer" >
+                <img
+                    className="h-14 w-14 mx-5 my-0 hover:opacity-50"
+                    alt="LinkedIn logo"
+                    src={linkedInLogo}
+                />
             </a>
         </ul>
-        <div className={styles.footerName}>
-        © {year} {name}
+        <div className="flex justify-center text-white"
+        // {styles.footerName}
+        >
+        © {currentYear} {name}
         </div>
     </div>
   )

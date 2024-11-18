@@ -1,20 +1,18 @@
- .portfolio {
-
- }
- 
- .portfolioCard {
-    border: 3px solid white;
-    border-radius: 3px;
-    max-width: 500px;
-    /* background-color: hsl(184.88deg 96.61% 24.83% / 73%); */
-    margin: 0 10px 10px 10px;
-    padding: 0px 10px 5px 10px;
-    gap: 30px;
-    animation: fadeIn 3s;
+.portfolio {
 }
 
-@keyframes fadeIn {
+.portfolioCard {
+  /* border: 3px solid white;
+  border-radius: 3px;
+  max-width: 500px; */
+  /* background-color: hsl(184.88deg 96.61% 24.83% / 73%); */
+  /* margin: 0 10px 10px 10px;
+  padding: 0px 10px 5px 10px;
+  gap: 30px; */
+  /* animation: fadeIn 3s; */
+}
+
+/* @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-  }
-
+  } */

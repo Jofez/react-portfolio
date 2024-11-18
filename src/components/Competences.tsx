@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/experience.module.css'
 
 export default function Competences() {
@@ -107,34 +107,45 @@ export default function Competences() {
         },
     ]
 
+    const [title, setTitle] = useState("Competences") 
 
   return (
+
+
+
     <>
-            <h2>Competences</h2>
+    <h2 className='text-custom-title-fs'>{title}</h2>
 
-    <div  className={styles.competenceCard} style={{ padding: "10px 0px" }}>
+    <div className='max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] mt-0 mb-2 mx-2 py-2'
+    >
 
-                <div className={styles.competenceContent}>
+                <div className="m-0">
 
-                    <h4 style={{ fontWeight: "bold" }}>Språk:  </h4>
-                    <div className={styles.competenceTypes} >
+                    <h3 className='font-bold text-custom-heading-fs'>Språk:  </h3>
+                    <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0" >
                         <br />
                             {competences.filter(c => c.type === "Language").map(fi => (
-                        <p className={styles.competenceItems}>{fi.name}  </p>
+                        <p className="bg-white text-primary-blue border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 ">
+                            {fi.name}  
+                            </p>
                         ))}
                     </div>
 
-                    <h4 style={{ fontWeight: "bold" }}>Verktyg:  </h4>
-                    <div className={styles.competenceTypes}>
+                    <h3 className='font-bold text-custom-heading-fs'>Verktyg:  </h3>
+                    <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "Tool").map(fi => (
-                        <p className={styles.competenceItems} >{fi.name}  </p>
+                        <p className="bg-white text-primary-blue border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 " 
+                        >{fi.name} 
+                         </p>
                     ))}
                     </div>
 
-                    <h4 style={{ fontWeight: "bold" }}>CMS:  </h4>
-                    <div className={styles.competenceTypes}>
+                    <h3 className='font-bold text-custom-heading-fs'>CMS:  </h3>
+                    <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "CMS").map(fi => (
-                        <p className={styles.competenceItems}>{fi.name}  </p>
+                        <p className="bg-white text-primary-blue border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 ">
+                            {fi.name}  
+                            </p>
                     ))}
                     </div>
                    
