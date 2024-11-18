@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../styles/portfolio.module.css"
 import reactLogo from "../images/React-icon.svg.png"
 import tsLogo from "../images/Typescript_logo_2020.svg.png"
+import twLogo from '../images/Tailwind_CSS_Logo.svg'
+import gitHubLogo from '../images/github-mark.svg'
 
 export default function Portfolio() {
 
@@ -16,6 +18,7 @@ export default function Portfolio() {
         name: string
         description: string
         createdWith: LogoPortfolioProps[]
+        repositoryLink: string
     }
 
     const logoPortfolio: LogoPortfolioProps[] = [
@@ -29,6 +32,12 @@ export default function Portfolio() {
             src: tsLogo,
             name: "TypeScript",
         },
+        {
+            id: 3,
+            src: twLogo,
+            name: "Tailwind",
+        },
+
     ]
 
     const portfolio: PortfolioProps[] = [
@@ -36,35 +45,55 @@ export default function Portfolio() {
             id: 1,
             name: "Portfolio",
             description: "Hemsida för att visa upp erfarenheter och profil. Fokuserat på front-end-tekniker.",
-            createdWith: logoPortfolio
+            createdWith: logoPortfolio,
+            repositoryLink: "https://github.com/Jofez/react-portfolio"
         }
     ]
 
+    const [title, setTitle] = useState("Portfolio")
 
 
   return (
-   <div className={styles.portfolio}>
+   <div className="animate-fadeInSlower flex flex-col">
 
 
-        <h1 className={styles.title}>Portfolio</h1>
-        <div className={styles.portfolioCard} >
+        <h1 className='text-custom-title-fs'>
+            {title}
+        </h1>
+        <div 
+        className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] gap-7 mx-2 mt-0 mb-2 pt-0 px-2 pb-1"
+        // {styles.portfolioCard}
+        >
             
 
             {portfolio.map((p, index) => 
                 (
-                <div key={index}>
+                <div className='flex flex-col gap-5' key={index}>
 
-                    <h4 >{p.name}</h4>
-                    <p>{p.description}</p>
-                    {p.createdWith.map(c =>
+                    <h2 className='font-bold text-custom-heading-fs' >{p.name}</h2>
+                    <p className='text-custom-subheading-fs'>{p.description}</p>
+                    <div className='flex flex-row justify-center flex-wrap gap-2'>
+                        {p.createdWith.map(c =>
 
-                        <img style={{ width: "50px", height: "50px", objectFit: "contain", objectPosition: "center" }}
-                            src={c.src} 
-                            alt={c.name}
-                        />
-                    )
-                    }
-                   
+                            <img className='w-12 h-12 object-contain object-center'
+                                src={c.src} 
+                                alt={c.name}
+                            />
+                        )
+                        }
+
+
+                    </div>
+
+                    <div className='flex justify-center'>
+                    <a className=""
+                        href={p.repositoryLink} target="_blank" rel="noopener noreferrer" >
+                        <img className='w-12 h-12 object-contain object-center hover:opacity-50'
+                                    src={gitHubLogo} 
+                                    alt="logo"
+                                    />
+                    </a>
+                    </div>
                 </div>
             
             ))}

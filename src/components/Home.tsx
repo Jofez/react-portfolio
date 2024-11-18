@@ -23,16 +23,19 @@ export default function Home() {
 
   return (
     <>
-    <div className={styles.home}>
-        <div className={styles.profile}>
-            <code className={styles.profileName}>{profile.name}</code>
-            <code >{profile.title}</code>
+    <div className="max-w-screen-md flex flex-row gap-10 my-10 mx-0  max-[768px]:flex-col max-[768px]:items-center" >
+    
+        <div className="animate-fadeInSlow flex flex-col justify-start gap-2 w-fit md:gap-7 md:w-2/5 ">
+            <code className="text-3xl">{profile.name}</code>
+            <code className='text-2xl text-blue-500' >{profile.title}</code>
         </div>
  
-        <div className={styles.detailsDiv}>
+        <div className="animate-fadeInSlower flex flex-col justify-center w-3/5 items-center gap-7 md:w-10/12">
             <code>{profile.about}</code>
             <a  href={profile.email}>
-                <button className={styles.emailButton} >{profile.emailText}</button>
+                <button className="p-2 m-2 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-blue transition duration-500" >
+                    {profile.emailText}
+                </button>
             </a>
 
         </div>
