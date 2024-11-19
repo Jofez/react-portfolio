@@ -47,7 +47,7 @@ export default function EducationCard() {
     <div className="flex justify-center flex-col-reverse gap-7 mb-7 max-w-lg ">
         {/* {styles.educationContainer} */}
         {education.map((edu, index) => 
-            <div className="lg:w-[500px] h-full  border-[3px] border-white rounded-[3px] px-5 pt-0 pb-2 bg-transparent" 
+            <div className="flex flex-col gap-4 lg:w-[500px] h-full  border-[3px] border-white rounded-[3px] px-5 pt-2 pb-2 bg-transparent" 
                 key={index}
             >
                 {/* {styles.school} */}

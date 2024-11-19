@@ -27,10 +27,10 @@ export default function Home() {
     
         <div className="animate-fadeInSlow flex flex-col justify-start gap-2 w-fit md:gap-7 md:w-2/5 ">
             <code className="text-3xl">{profile.name}</code>
-            <code className='text-2xl text-blue-500' >{profile.title}</code>
+            <code className='text-2xl ' >{profile.title}</code>
         </div>
  
-        <div className="animate-fadeInSlower flex flex-col justify-center w-3/5 items-center gap-7 md:w-10/12">
+        <div className="animate-fadeInSlow flex flex-col justify-center w-3/5 items-center gap-7 md:w-10/12">
             <code>{profile.about}</code>
             <a  href={profile.email}>
                 <button className="p-2 m-2 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-blue transition duration-500" >

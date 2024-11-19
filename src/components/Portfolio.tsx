@@ -54,50 +54,37 @@ export default function Portfolio() {
 
 
   return (
-   <div className="animate-fadeInSlower flex flex-col">
-
-
+   <div className="animate-fadeInSlow flex flex-col gap-7">
         <h1 className='text-custom-title-fs'>
             {title}
         </h1>
         <div 
         className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] gap-7 mx-2 mt-0 mb-2 pt-0 px-2 pb-1"
-        // {styles.portfolioCard}
         >
-            
-
-            {portfolio.map((p, index) => 
-                (
+            {portfolio.map((p, index) => (
                 <div className='flex flex-col gap-5' key={index}>
-
-                    <h2 className='font-bold text-custom-heading-fs' >{p.name}</h2>
+                    <h2 className=' text-custom-heading-fs mt-2' >{p.name}</h2>
                     <p className='text-custom-subheading-fs'>{p.description}</p>
                     <div className='flex flex-row justify-center flex-wrap gap-2'>
                         {p.createdWith.map(c =>
-
                             <img className='w-12 h-12 object-contain object-center'
                                 src={c.src} 
                                 alt={c.name}
+                                title={c.name}
                             />
-                        )
-                        }
-
-
+                        )}
                     </div>
-
                     <div className='flex justify-center'>
                     <a className=""
                         href={p.repositoryLink} target="_blank" rel="noopener noreferrer" >
                         <img className='w-12 h-12 object-contain object-center hover:opacity-50'
                                     src={gitHubLogo} 
                                     alt="logo"
-                                    />
+                        />
                     </a>
                     </div>
                 </div>
-            
             ))}
-
         </div>
     </div>
   )
