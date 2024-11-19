@@ -65,9 +65,7 @@ export default function Experiences() {
                 languages: "HTML, CSS, Javascript, React Native" 
             }
         }
-
     ]
-
     
     const [title, setTitle] = useState("Erfarenhet")
 
@@ -91,7 +89,7 @@ export default function Experiences() {
 
   return (
     <>
-    <div className='animate-fadeInSlower flex flex-col justify-between items-center gap-4 lg:gap-7' >
+    <div className='animate-fadeInSlow flex flex-col justify-between  gap-4 lg:gap-7' >
     <h1 className='text-custom-title-fs'>{title}</h1>
     
     {experiences.map((m, index) => 
@@ -104,13 +102,11 @@ export default function Experiences() {
                 <img className='p-2 w-28 h-28 object-cover object-center  transform translate-x-0 translate-y-0 translate-z-[0.1px]'
                 src={m.logo} alt='logo'
                     /> 
-                <button className="bg-transparent text-white cursor-pointer border-white border-2 border-solid py-1 px-2 hover:bg-hover-blue transition duration-500 mr-2 mb-1"
-                // {styles.experienceCardButton} 
+                <button className="text-custom-subheading-fs bg-transparent text-white cursor-pointer border-white border-2 border-solid py-1 px-2 hover:bg-hover-blue transition duration-500 mr-2 mb-1"
                     onClick={() => toggleExperience(index)}>{m.isOpen ? "Visa mindre" : "Visa mer"}</button>
                  </div>
 
                 <div className="flex flex-col justify-start text-left">
-                {/* {styles.experienceCardTitle} */}
                     <h2 className='text-custom-heading-fs m-0 px-2 pt-2 pb-0'>{m.title}</h2>
                     <p className='text-custom-subheading-fs m-0 pt-1 pr-2 pb-0 pl-5'>{m.company}</p>
                     <p className='text-custom-p-fs m-0 pt-1 pr-2 pb-0 pl-5'>{formatDate(m.fromDate)} - {formatDate(m.toDate)}</p>
@@ -118,12 +114,9 @@ export default function Experiences() {
                 </div>
 
             </div>
-            {/* <hr /> */}
             {m.isOpen && (
                 <div className="flex flex-col items-start pr-5">
-                    {/* {styles.experienceCardDetails} */}
                     <ul className="pl-8 mx-2">
-                    {/* {styles.detailsList} */}
                         <li className='text-custom-p-fs text-left mt-1 mb-2'>{m.details.description}</li>
                         <li className='text-custom-p-fs text-left mb-2'>Språk: {m.details.languages} </li>
                     </ul>

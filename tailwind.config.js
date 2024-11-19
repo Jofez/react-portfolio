@@ -17,6 +17,7 @@ module.exports = {
         }
       },
       colors: {
+        'primary-darkgreen': '#034544',
         'primary-blue': '#2d4470',
         'hover-blue': '#8ca9ff5c',
         'header-color': '#323232',

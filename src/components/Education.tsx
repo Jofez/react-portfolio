@@ -8,8 +8,7 @@ export default function Education() {
 
   return (
     <>
-    <div className="animate-fadeInSlower flex items-stretch w-11/12 sm:max-w-lg flex-col gap-4 md:gap-7"> 
-       {/* {styles.education} */}
+    <div className="animate-fadeInSlow flex items-stretch w-11/12 sm:max-w-lg flex-col gap-4 md:gap-7"> 
         <h1 className='text-custom-title-fs'>{title}</h1>
 
             <EducationCard />

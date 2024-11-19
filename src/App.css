@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  background-color: #2d4470;
+  background-color: #034544;
+  /* #002c2d; */
+  /* #2d4470; */
   /* #282c34; */
   min-height: 100vh;
   display: flex;
@@ -9,6 +11,7 @@
   justify-content: center;
   font-size: calc(6px + 2vmin);
   color: white;
+  outline: 2px solid white;
 }
 
 .App-link {
@@ -17,4 +20,8 @@
 
 html {
   scroll-behavior: smooth;
+}
+img {
+  /* Removing image blur */
+  transform: translate3d(0px, 0px, 0.1px);
 }
