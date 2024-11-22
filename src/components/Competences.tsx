@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
-import styles from '../styles/experience.module.css'
 
-export default function Competences() {
-    
-
-    type CompetenceProps = {
-        id: number
-        name: string
-        type: string
+type CompetenceProps = {
+    id: number
+    name: string
+    type: string
     }
 
     const competences: CompetenceProps[] = [
@@ -102,23 +98,19 @@ export default function Competences() {
         },
         {
             id: 34,
-            name: "GitHub",
+            name: "Git",
             type: "Tool"
         },
     ]
 
+export default function Competences() {
     const [title, setTitle] = useState("Competences") 
 
   return (
-
-
-
     <>
     <h2 className='text-custom-title-fs'>{title}</h2>
-
     <div className='max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] mt-0 mb-2 mx-2 py-2'
     >
-
                 <div className="m-0">
 
                     <h3 className='font-bold text-custom-heading-fs'>Språk:  </h3>
