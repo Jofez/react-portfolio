@@ -8,15 +8,15 @@ export default function UpdateProfile() {
 
   }
   return (
-    <>
-    <div>
+
+    <div className='flex flex-col'>
     <h1>Update profile</h1>
-      <div>
-        <h2>Erfarenhet</h2>
+   
+       
           <NewWork />
 
-      </div>
+      
     </div>
-    </>
+
   )
 }

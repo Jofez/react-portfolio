@@ -1,26 +1,17 @@
 import React, { useState } from 'react'
 import styles from "../styles/home.module.css"
+import { ProfileProps } from './Types'
+
+const profile: ProfileProps = {
+    id: 1,
+    name: "Josef Holmberg",
+    title: "Systemutvecklare",
+    about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i Javascript-ramverk som t.ex. React",
+    email: "mailto:josefholmberg@hotmail.com",
+    emailText: "Maila mig!"
+}
 
 export default function Home() {
-
-    type ProfileProps = {
-        id: number,
-        name: string
-        title: string
-        about: string
-        email: string
-        emailText: string
-    }
-
-    const profile: ProfileProps = {
-        id: 1,
-        name: "Josef Holmberg",
-        title: "Systemutvecklare",
-        about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i Javascript-ramverk som t.ex. React",
-        email: "mailto:josefholmberg@hotmail.com",
-        emailText: "Maila mig!"
-    }
-
   return (
     <>
     <div className="max-w-screen-md flex flex-row gap-10 my-10 mx-0  max-[768px]:flex-col max-[768px]:items-center" >
