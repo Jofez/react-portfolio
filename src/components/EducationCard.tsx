@@ -1,6 +1,4 @@
 import React from 'react'
-import styles from '../styles/education.module.css'
-import githubLogo from "../images/github-mark.svg"
 import { formatDate } from '../utils/dateUtils'
 import { EducationProps } from './Types'
 

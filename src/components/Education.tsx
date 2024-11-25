@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from '../styles/education.module.css'
 import EducationCard from './EducationCard'
 
 export default function Education() {
