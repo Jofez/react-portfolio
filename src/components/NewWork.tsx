@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef, useState } from 'react'
+import React, { FormEvent,  useState } from 'react'
 import { ExperienceProps } from './Types'
 import { formatDate } from '../utils/dateUtils'
 import { v4 as uuid } from "uuid";
@@ -73,7 +73,7 @@ export default function NewWork() {
 
       
         e.preventDefault()
-        alert("yo")
+        
         // console.log(newExp.map(e => formatDate(e.fromDate)))
         // console.log(newExp.map(e => e))
 
@@ -155,7 +155,7 @@ export default function NewWork() {
             />
           
           <br></br>
-          <button className='border-white border-2 rounded-sm hover:bg-hover-blue transition duration-500' type='submit'>Lägg till</button>
+          <button className='border-white border-2 rounded-sm hover:bg-hover-purple transition duration-500' type='submit'>Lägg till</button>
       </form>
 
       <h2>Erfarenheter:</h2>

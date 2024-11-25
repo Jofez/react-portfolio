@@ -1,4 +1,15 @@
-import React from 'react'
+
+export type HeaderProps = {
+    id: string,
+    name: string,
+    link: string
+}
+
+export type CompetenceProps = {
+    id: number
+    name: string
+    type: string
+}
 
 type DetailsProps = {
     description: string,

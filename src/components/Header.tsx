@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
-// import styles from '../styles/header.module.css'
 import hamburgerLogo from '../images/burger-menu-right.svg'
-
-type HeaderProps = {
-    id: string,
-    name: string,
-    link: string
-}
+import { HeaderProps } from './Types'
 
 const headerItems: HeaderProps[] = [
     {
@@ -55,7 +49,7 @@ export default function Header() {
       <nav className="hidden lg:flex space-x-6 ">
         {headerItems.map(item => 
             <a href={item.link}
-                className="text-2xl p-2 hover:text-teal-300 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-teal-300 transition duration-200">
+                className="text-2xl p-2 hover:text-yellow-400 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-200">
                 {item.name}
             </a>
             )}
@@ -71,7 +65,7 @@ export default function Header() {
         <img
           src={hamburgerLogo}
           alt="Menu"
-          className={` hover:filter contrast-150 grayscale-80 transition-transform transform  ${isOpen ? 'rotate-90' : ''} group-hover:text-green-500`}
+          className={`opacity-80 hover:opacity-100 transition-transform transform  ${isOpen ? 'rotate-90' : ''}`}
           style={{ width: '50px', height: '50px', color: "currentColor" }}
           aria-hidden={!isOpen}
         />
@@ -85,7 +79,7 @@ export default function Header() {
           <div className="flex flex-col items-center space-y-4 py-4 gap-7">
             {headerItems.map(item => 
                 <a href={item.link} 
-                    className="text-2xl p-2 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-teal-300 transition duration-200 hover:text-teal-300 ">
+                    className="text-2xl p-2 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-200 hover:text-yellow-400">
                     {item.name}
                 </a>
             )}

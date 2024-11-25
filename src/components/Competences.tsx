@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
+import { CompetenceProps } from './Types'
 
-type CompetenceProps = {
-    id: number
-    name: string
-    type: string
-    }
 
     const competences: CompetenceProps[] = [
         {
@@ -24,7 +20,7 @@ type CompetenceProps = {
         },
         {
             id: 4,
-            name: "Javascript",
+            name: "JavaScript",
             type: "Language"
         },
         {
@@ -63,10 +59,19 @@ type CompetenceProps = {
             name: "SCSS",
             type: "Language"
         },
-
         {
             id: 12,
+            name: "Tailwind",
+            type: "Language"
+        },
+        {
+            id: 13,
             name: "SQL",
+            type: "Language"
+        },
+        {
+            id: 14,
+            name: "TypeScript",
             type: "Language"
         },
 

@@ -4,9 +4,7 @@ import NewWork from './NewWork'
 
 export default function UpdateProfile() {
 
-  function handleSubmit() {
 
-  }
   return (
 
     <div className='flex flex-col'>

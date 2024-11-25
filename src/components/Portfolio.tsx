@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import reactLogo from "../images/React-icon.svg.png"
 import tsLogo from "../images/Typescript_logo_2020.svg.png"
 import twLogo from '../images/Tailwind_CSS_Logo.svg'
