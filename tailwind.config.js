@@ -20,7 +20,7 @@ module.exports = {
         'primary-darkgreen': '#034544',
         'primary-blue': '#2d4470',
         'hover-blue': '#8ca9ff5c',
-        'hover-purple': "#4B3959",
+        'hover-purple': "#3f2d4d",
         'header-color': '#323232',
         'footer-color': '#1c1e23' 
       },

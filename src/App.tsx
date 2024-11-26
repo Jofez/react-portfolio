@@ -12,19 +12,20 @@ import Home from './components/Home';
 function App() {
   return (
     <>
+    <Router>
     <Header />
       <div className="App">
-        <Router>
           <Routes>
             <Route path="/" element={
               <Home />
             }
             />
+            {/* Wip
             <Route path="/update-profile" element={
                                               <UpdateProfile />
 
                                                 }
-            />
+            /> */}
             <Route path='/portfolio'
               element={<Portfolio />}
             />
@@ -36,16 +37,10 @@ function App() {
             />
 
           </Routes>
-        </Router>
-
-      
-      </div>
+        </div>
       
         <Footer />
-
-
-
-
+      </Router>
     </>
   );
 }

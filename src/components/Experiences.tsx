@@ -93,8 +93,8 @@ export default function Experiences() {
             {m.isOpen && (
                 <div className="flex flex-col items-start pr-5">
                     <ul className="pl-8 mx-2">
-                        <li className='text-custom-p-fs text-left mt-1 mb-2'>{m.details.description}</li>
-                        <li className='text-custom-p-fs text-left mb-2'>Språk: {m.details.languages} </li>
+                        <li key={m.details.description} className='text-custom-p-fs text-left mt-1 mb-2'>{m.details.description}</li>
+                        <li key={m.details.languages} className='text-custom-p-fs text-left mb-2'>Språk: {m.details.languages} </li>
                     </ul>
                 </div>
             )}

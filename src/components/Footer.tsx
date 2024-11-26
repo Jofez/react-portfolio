@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import githubLogo from "../images/github-mark-white.svg"
 import linkedInLogo from "../images/LinkedIn_icon.svg"
+import { FooterLinkProps } from './Types'
+import { Link } from 'react-router-dom'
 
-type FooterLinkProps = {
-    id: string,
-    name: string,
-    logo: string,
-    link: string
-}
 
 const footerLinks: FooterLinkProps[] = [
     {
@@ -41,16 +37,16 @@ export default function Footer() {
     >
         <div className="list-none flex justify-center items-center m-0 px-0 py-2"
         >
-            {footerLinks.map(f => (
+            {footerLinks.map(l => (
                 
-                <a id={f.id} className=""
-                    href={f.link} target="_blank" rel="noopener noreferrer" >
+                <Link key={l.id} className=""
+                    to={l.link} target="_blank" rel="noopener noreferrer" >
                     <img
                         className="h-14 w-14 mx-5 my-0 hover:opacity-50"
                         alt=" logo"
-                        src={f.logo}
+                        src={l.logo}
                         />
-                </a>
+                </Link>
             ))}
         </div>
         <div className="flex justify-center text-white"
