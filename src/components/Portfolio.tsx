@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import reactLogo from "../images/React-icon.svg.png"
+import reactLogo from "../images/logo192.png"
 import tsLogo from "../images/Typescript_logo_2020.svg.png"
 import twLogo from '../images/Tailwind_CSS_Logo.svg'
 import gitHubLogo from '../images/github-mark.svg'
 import { PortfolioProps, LogoPortfolioProps } from './Types'
+import { Link } from 'react-router-dom'
 
 const logoPortfolio: LogoPortfolioProps[] = [
     {
@@ -50,22 +51,23 @@ export default function Portfolio() {
                     <h2 className=' text-custom-heading-fs mt-2' >{p.name}</h2>
                     <p className='text-custom-subheading-fs'>{p.description}</p>
                     <div className='flex flex-row justify-center flex-wrap gap-2'>
-                        {p.createdWith.map(c =>
+                        {p.createdWith.map(logo =>
                             <img className='w-12 h-12 object-contain object-center'
-                                src={c.src} 
-                                alt={c.name}
-                                title={c.name}
+                                key={logo.id}
+                                src={logo.src} 
+                                alt={logo.name}
+                                title={logo.name}
                             />
                         )}
                     </div>
                     <div className='flex justify-center mb-2'>
-                    <a className=""
-                        href={p.repositoryLink} target="_blank" rel="noopener noreferrer" >
+                    <Link className=""
+                        to={p.repositoryLink} target="_blank" rel="noopener noreferrer" >
                         <img className='w-12 h-12 object-contain object-center hover:opacity-50'
                                     src={gitHubLogo} 
                                     alt="logo"
                         />
-                    </a>
+                    </Link>
                     </div>
                 </div>
             ))}

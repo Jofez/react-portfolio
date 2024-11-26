@@ -17,3 +17,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body {
+  transition: opacity 0.3s ease-in-out;
+}
+body.loading {
+  opacity: 0;
+}

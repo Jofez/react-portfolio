@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import hamburgerLogo from '../images/burger-menu-right.svg'
 import { HeaderProps } from './Types'
+import { Link } from 'react-router-dom'
 
 const headerItems: HeaderProps[] = [
     {
         id: 'hi-1',
-        name: "Home",
+        name: "Hem",
         link: "/"
     },
     {
@@ -15,13 +16,13 @@ const headerItems: HeaderProps[] = [
     },
     {
         id: 'hi-3',
-        name: "Experiences",
+        name: "Erfarenhet",
         link: "/experiences"
     }
     ,
     {
         id: 'hi-4',
-        name: "Education",
+        name: "Utbildning",
         link: "/education"
     }
 ]
@@ -48,11 +49,12 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex space-x-6 ">
         {headerItems.map(item => 
-            <a href={item.link}
-                className="text-2xl p-2 hover:text-yellow-400 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-200">
-                {item.name}
-            </a>
-            )}
+        <Link key={item.id}
+            className="text-2xl p-2 hover:text-yellow-400 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-500"
+            to={item.link}>
+            {item.name}
+        </Link>
+        )}
       </nav>
 
       {/* Hamburger Button */}
@@ -78,10 +80,11 @@ export default function Header() {
     }`}>
           <div className="flex flex-col items-center space-y-4 py-4 gap-7">
             {headerItems.map(item => 
-                <a href={item.link} 
-                    className="text-2xl p-2 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-200 hover:text-yellow-400">
+                <Link onClick={toggleMenu} key={item.id}
+                    className="text-2xl p-2 hover:text-yellow-400 border-t-4 border-b-4 border-transparent hover:border-t-4 hover:border-b-4 hover:border-yellow-400 transition duration-500"
+                    to={item.link}>
                     {item.name}
-                </a>
+                </Link>
             )}
           
           </div>

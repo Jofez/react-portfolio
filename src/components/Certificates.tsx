@@ -25,7 +25,7 @@ const certificates: CertificateProps[] = [
 
 export default function Certificates() {
     
-    const [title, setTitle] = useState("Certificates") 
+    const [title, setTitle] = useState("Certifikat") 
 
   return (
     <>

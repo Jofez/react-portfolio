@@ -71,3 +71,10 @@ export type PortfolioProps = {
     createdWith: LogoPortfolioProps[]
     repositoryLink: string
 }
+
+export type FooterLinkProps = {
+    id: string,
+    name: string,
+    logo: string,
+    link: string
+}

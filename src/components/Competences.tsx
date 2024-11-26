@@ -109,7 +109,7 @@ import { CompetenceProps } from './Types'
     ]
 
 export default function Competences() {
-    const [title, setTitle] = useState("Competences") 
+    const [title, setTitle] = useState("Kompetenser") 
 
   return (
     <>
@@ -122,9 +122,11 @@ export default function Competences() {
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0" >
                         <br />
                             {competences.filter(c => c.type === "Language").map(fi => (
-                        <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 ">
+                        <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 "
+                            key={fi.id}
+                        >
                             {fi.name}  
-                            </p>
+                        </p>
                         ))}
                     </div>
 
@@ -132,17 +134,21 @@ export default function Competences() {
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "Tool").map(fi => (
                         <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 " 
-                        >{fi.name} 
-                         </p>
+                            key={fi.id}
+                        >
+                            {fi.name} 
+                        </p>
                     ))}
                     </div>
 
                     <h3 className='font-bold text-custom-heading-fs'>CMS:  </h3>
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "CMS").map(fi => (
-                        <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 ">
+                        <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 "
+                            key={fi.id}
+                        >
                             {fi.name}  
-                            </p>
+                        </p>
                     ))}
                     </div>
                    

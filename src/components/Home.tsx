@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { ProfileProps } from './Types'
+import { Link } from 'react-router-dom'
 
 const profile: ProfileProps = {
     id: 1,
     name: "Josef Holmberg",
     title: "Systemutvecklare",
-    about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i Javascript-ramverk som t.ex. React",
+    about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i JavaScript-ramverk som t.ex. React",
     email: "mailto:josefholmberg@hotmail.com",
     emailText: "Maila mig!"
 }
@@ -20,13 +21,15 @@ export default function Home() {
             <code className='text-2xl ' >{profile.title}</code>
         </div>
  
-        <div className="animate-fadeInSlow flex flex-col justify-center w-4/5 items-center gap-7 md:w-10/12">
+        <div className="animate-fadeInSlow flex flex-col justify-center w-4/5 items-center gap-11 md:w-10/12">
             <code>{profile.about}</code>
-            <a className='' href={profile.email}>
-                <button className="text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500" >
+                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500" >
+            <Link className='' to={profile.email}>
                     {profile.emailText}
+            </Link>
                 </button>
-            </a>
+            {/* width: 164px;
+                height: 84px; */}
 
         </div>
     </div>
