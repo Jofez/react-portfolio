@@ -8,6 +8,7 @@ import Experiences from './components/Experiences';
 import Education from './components/Education';
 import UpdateProfile from './components/UpdateProfile';
 import Home from './components/Home';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
             />
             <Route path='/education'
               element={<Education />}
+            />
+
+            <Route path='*'
+              element={<NotFound />}
             />
 
           </Routes>

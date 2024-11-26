@@ -37,9 +37,9 @@ export default function Certificates() {
         >
             <div className="flex justify-between flex-row-reverse" >
                 <div className="flex flex-col justify-between m-1">
-                <img className='p-2  h-28 object-cover object-center w-28 transform translate-3d' 
-                    src={c.badge} alt='logo'
-                /> 
+                    <img className='max-w-none p-2  h-28 object-cover object-center w-28 transform translate-3d' 
+                        src={c.badge} alt='logo'
+                    /> 
                  </div>
 
                 <div className="flex flex-col justify-start text-left">
