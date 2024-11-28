@@ -35,7 +35,7 @@ export type CertificateProps = {
     title: string
     issued: Date
     badge: string
-    link?: string
+    link: string
  
 }
 
