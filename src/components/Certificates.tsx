@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import SV_Badge from "../images/Certified-website-developer-badge.jpeg"
-import IBM_Badge from "../images/Watson_IoT_-_Max_7.6_Bootcamp.png"
+import SV_Badge from "../images/Certified-website-developer-badge.webp"
+import IBM_Badge from "../images/Watson_IoT_-_Max_7.6_Bootcamp.webp"
 import { formatDate } from '../utils/dateUtils'
 import { CertificateProps } from './Types'
+import { Link } from 'react-router-dom'
 
 const certificates: CertificateProps[] = [
     {
@@ -19,13 +20,14 @@ const certificates: CertificateProps[] = [
         title: "Certified Sitevision Website Developer",
         issued: new Date("2023-02"),
         badge: SV_Badge,
-        link: "https://www.youracclaim.com/badges/156a5da6-eae5-4672-a02f-1b6696f4b408"
+        link: "https://verify.trueoriginal.com/21A5CBFC-44EA-1986-897E-C9E4F5EBE579/?ref=badge"
     },
 ]
 
 export default function Certificates() {
     
     const [title, setTitle] = useState("Certifikat") 
+    const showCert = "Visa certifikat"
 
   return (
     <>
@@ -37,9 +39,11 @@ export default function Certificates() {
         >
             <div className="flex justify-between flex-row-reverse" >
                 <div className="flex flex-col justify-between m-1">
-                    <img className='max-w-none p-2  h-28 object-cover object-center w-28 transform translate-3d' 
-                        src={c.badge} alt='logo'
-                    /> 
+                    <Link to={c.link} target="_blank" rel="noopener noreferrer">
+                        <img className='max-w-fit p-2  h-28 object-cover object-center w-28 transform translate-3d' 
+                            src={c.badge} alt='logo' title={showCert}
+                        /> 
+                    </Link>
                  </div>
 
                 <div className="flex flex-col justify-start text-left">
