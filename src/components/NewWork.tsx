@@ -49,7 +49,7 @@ export default function NewWork() {
   //   {
   //     id: 3,
   //     company: company,
-  //     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFh0KySmx3Tag/company-logo_100_100/company-logo_100_100/0/1726734715519/hiq_logo?e=1738800000&v=beta&t=L_HnzsKo46sRKOS3r6KOdmAl_PPTfp8Vz2tK1t7rwD8",
+  //     logo: "",
   //     title: title,
   //     fromDate: new Date("2022-09"),
   //     toDate: new Date("2024-11"),

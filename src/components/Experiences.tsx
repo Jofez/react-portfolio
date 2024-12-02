@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Certificates from './Certificates'
 import Competences from './Competences'
 import { formatDate } from '../utils/dateUtils'
 import { ExperienceProps } from './Types'
+import bonlivaLogo from "../images/bonliva_logo.webp"
+import nexerLogo  from "../images/nexer_group_logo.webp"
+import hiqLogo  from "../images/hiq_logo.webp"
+
+
+
 
 const initialExperiences: ExperienceProps[] = [
     {
         id: 3,
         company: "HiQ",
-        logo: "https://media.licdn.com/dms/image/v2/D4D0BAQFh0KySmx3Tag/company-logo_100_100/company-logo_100_100/0/1726734715519/hiq_logo?e=1738800000&v=beta&t=L_HnzsKo46sRKOS3r6KOdmAl_PPTfp8Vz2tK1t7rwD8",
+        logo: hiqLogo,
         title: "Webbutvecklare",
         fromDate: new Date("2022-09"),
         toDate: new Date("2024-11"),
@@ -22,7 +28,7 @@ const initialExperiences: ExperienceProps[] = [
     {
         id: 2,
         company: "Nexer Group",
-        logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHyAfaO217dng/company-logo_200_200/company-logo_200_200/0/1688377751150/nexer_group_logo?e=1738800000&v=beta&t=n4t5TGZEJuM48gQUyIA6CA7f2ijSP8_jBXPUS1Fdoek",
+        logo: nexerLogo,
         title: "Systemutvecklare",
         fromDate: new Date("2020-01"),
         toDate: new Date("2022-09"),
@@ -36,7 +42,7 @@ const initialExperiences: ExperienceProps[] = [
     {
         id: 1,
         company: "Bonliva",
-        logo: "https://media.licdn.com/dms/image/v2/D4D0BAQF5VekOuJR0OA/company-logo_200_200/company-logo_200_200/0/1708082511190/bonliva_logo?e=1738800000&v=beta&t=D-YSuWl-BtmsusveOVtsCP7cLKSW2qdZLIcDJLGdRsQ",
+        logo: bonlivaLogo,
         title: "Apputvecklare",
         fromDate: new Date("2019-01"),
         toDate: new Date("2019-06"),
@@ -51,6 +57,9 @@ const initialExperiences: ExperienceProps[] = [
 
 export default function Experiences() {
 
+
+
+
     const [title, setTitle] = useState("Erfarenhet")
     const [experiences, setExperiences] = useState<ExperienceProps[]>(initialExperiences);
 
@@ -61,6 +70,26 @@ export default function Experiences() {
             )
         );
     }
+
+    useEffect(() => {
+        const head = document.head;
+      
+        experiences.forEach((experience) => {
+          const link = document.createElement("link");
+          link.rel = "preload";
+          link.as = "image";
+          link.href = experience.logo; // Bild-URL
+          head.appendChild(link);
+        });
+      
+        return () => {
+          // Rensa bort preload-links när komponenten unmountas
+          experiences.forEach(() => {
+            const links = document.querySelectorAll('link[rel="preload"]');
+            links.forEach((link) => link.remove());
+          });
+        };
+      }, []);
 
 
   return (
