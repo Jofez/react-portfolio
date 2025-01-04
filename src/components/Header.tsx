@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import hamburgerLogo from '../images/burger-menu-right.svg'
 import { HeaderProps } from './Types'
 import { Link } from 'react-router-dom'
+import i18next, { languageResources } from '../i18n/i18next';
+import { useTranslation } from 'react-i18next';
 
-const headerItems: HeaderProps[] = [
+
+
+
+export default function Header() {
+
+  const headerItems: HeaderProps[] = [
     {
         id: 'hi-1',
         name: "Hem",
@@ -26,9 +33,6 @@ const headerItems: HeaderProps[] = [
         link: "/education"
     }
 ]
-
-
-export default function Header() {
 
     const [headerTitle, setHeaderTitle] = useState("Josef Holmberg")
     const [isOpen, setIsOpen] = useState(false)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { formatDate } from '../utils/dateUtils'
 import { EducationProps } from './Types'
+import { useTranslation } from 'react-i18next';
 
 const education: EducationProps[] = [
     {
@@ -22,6 +23,8 @@ const education: EducationProps[] = [
 ]
 
 export default function EducationCard() {
+
+        const {t, i18n} = useTranslation();
 
   return (
     <>

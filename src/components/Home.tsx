@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
 import { ProfileProps } from './Types'
 import { Link } from 'react-router-dom'
+import i18next, { languageResources } from '../i18n/i18next';
+import { useTranslation } from 'react-i18next';
 
-const profile: ProfileProps = {
-    id: 1,
-    name: "Josef Holmberg",
-    title: "Systemutvecklare",
-    about: "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i JavaScript-ramverk som t.ex. React",
-    email: "mailto:josefholmberg@hotmail.com",
-    emailText: "Maila mig!"
-}
+
+
+
 
 export default function Home() {
+
+    const {t, i18n} = useTranslation();
+
+    const profile: ProfileProps = {
+        id: 1,
+        name: "Josef Holmberg",
+        title: t("profile-title"), 
+        about: t("profile-about"),
+        email: "mailto:josefholmberg@hotmail.com",
+        emailText: t("profile-email-text")
+    }
+
+    const toggleLanguage = () => {
+        const newLanguage = i18n.language === 'en' ? 'sv' : 'en';
+        i18n.changeLanguage(newLanguage);
+      };
+
   return (
     <>
     <div className="max-w-screen-md flex flex-row gap-9 my-10 mx-0  max-[768px]:flex-col max-[768px]:items-center" >
     
         <div className="animate-fadeInSlow flex flex-col justify-start  w-4/5 items-center gap-6 md:w-10/12 ">
             <code className="text-3xl">{profile.name}</code>
+                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+                    onClick={toggleLanguage}
+                >
+                    {t("change-language")}
+                </button>
+                <p>Aktuellt språk: {i18n.language}</p>
             <code className='text-2xl ' >{profile.title}</code>
         </div>
  

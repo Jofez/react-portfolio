@@ -1,0 +1,19 @@
+{ 
+
+        "change-language": "Change language",
+        "welcome": "Welcome to my appp",
+        "profile-title": "Software developer",
+        "profile-email-text": "Email me!",
+        "profile-about": "Bachelor's degree in Systems Analysis from Örebro university with five years experience within the field. My strengths lie in Frontend development in JavaScript frameworks such as React.",
+        "portfolio-description": "A website showcasing experiences and profile, with a focus on front-end techniques.",
+        "experiences-button-show-more": "Show more",
+        "experiences-button-show-less": "Show less",
+        "experiences-languages": "Languages",
+        "experiences-1-title": "App developer",
+        "experiences-1-location": "Örebro, Sweden",
+        "experiences-1-details-description": "During the fifth semester of my university studies, I worked on the course Systems Development Project at Bonliva. I contributed to the development of a mobile application for time reporting using React Native.",
+        "experiences-2-title": "Software Developer",
+        "experiences-2-location": "Örebro, Sweden",
+        "experiences-2-details-description": "Worked with the maintenance system IBM Maximo, which was developed and configured for clients. Also contributed to developing simplified web applications based on Maximo's functionality."
+
+    }

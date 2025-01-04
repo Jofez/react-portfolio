@@ -6,57 +6,61 @@ import { ExperienceProps } from './Types'
 import bonlivaLogo from "../images/bonliva_logo.webp"
 import nexerLogo  from "../images/nexer_group_logo.webp"
 import hiqLogo  from "../images/hiq_logo.webp"
+import i18next, { languageResources } from '../i18n/i18next';
+import { useTranslation } from 'react-i18next';
 
 
 
 
-const initialExperiences: ExperienceProps[] = [
-    {
-        id: 3,
-        company: "HiQ",
-        logo: hiqLogo,
-        title: "Webbutvecklare",
-        fromDate: new Date("2022-09"),
-        toDate: new Date("2024-11"),
-        location: "Örebro, Sweden",
-        isOpen: false,
-        details: { 
-            description: "Nyutveckling och förvaltning av webbsidor med CMS:erna Sitevision och Optimizely. Visualisering av data i plattformen Ignition.", 
-            languages: "HTML, SCSS, JavaScript, Vue, React, C#, .NET, Python" 
-        } 
-    },
-    {
-        id: 2,
-        company: "Nexer Group",
-        logo: nexerLogo,
-        title: "Systemutvecklare",
-        fromDate: new Date("2020-01"),
-        toDate: new Date("2022-09"),
-        location: "Örebro, Sweden",
-        isOpen: false,
-        details: { 
-            description: "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet", 
-            languages: "HTML, CSS, Javascript, Lit-elements, REST API" 
-        }
-    },
-    {
-        id: 1,
-        company: "Bonliva",
-        logo: bonlivaLogo,
-        title: "Apputvecklare",
-        fromDate: new Date("2019-01"),
-        toDate: new Date("2019-06"),
-        location: "Örebro, Sweden",
-        isOpen: false,
-        details: { 
-            description: "Under femte terminen på min universitetsutbildning arbetade jag under kursen Systemutvecklingsprojekt på Bonliva. Var med och utvecklade en mobilapplikation för tidrapportering i React Native", 
-            languages: "HTML, CSS, Javascript, React Native" 
-        }
-    }
-]
 
 export default function Experiences() {
 
+    const {t, i18n} = useTranslation();
+
+    const initialExperiences: ExperienceProps[] = [
+        {
+            id: 3,
+            company: "HiQ",
+            logo: hiqLogo,
+            title: "Webbutvecklare",
+            fromDate: new Date("2022-09"),
+            toDate: new Date("2024-11"),
+            location: "Örebro, Sweden",
+            isOpen: false,
+            details: { 
+                description: "Nyutveckling och förvaltning av webbsidor med CMS:erna Sitevision och Optimizely. Visualisering av data i plattformen Ignition.", 
+                languages: "HTML, SCSS, JavaScript, Vue, React, C#, .NET, Python" 
+            } 
+        },
+        {
+            id: 2,
+            company: "Nexer Group",
+            logo: nexerLogo,
+            title: "Systemutvecklare",
+            fromDate: new Date("2020-01"),
+            toDate: new Date("2022-09"),
+            location: "Örebro, Sweden",
+            isOpen: false,
+            details: { 
+                description: "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet", 
+                languages: "HTML, CSS, Javascript, Lit-elements, REST API" 
+            }
+        },
+        {
+            id: 1,
+            company: "Bonliva",
+            logo: bonlivaLogo,
+            title: t("experiences-1-title"),
+            fromDate: new Date("2019-01"),
+            toDate: new Date("2019-06"),
+            location: t("experiences-1-location"),
+            isOpen: false,
+            details: { 
+                description: t("experiences-1-details-description"), 
+                languages: "HTML, CSS, Javascript, React Native" 
+            }
+        }
+    ]
 
 
 
@@ -108,7 +112,7 @@ export default function Experiences() {
                 src={m.logo} alt='logo'
                     /> 
                 <button className="text-custom-subheading-fs bg-transparent text-white cursor-pointer border-white border-2 border-solid py-1 px-2 hover:bg-hover-purple focus:bg-hover-purple transition duration-500 mr-2 mb-1"
-                    onClick={() => toggleExperience(index)}>{m.isOpen ? "Visa mindre" : "Visa mer"}</button>
+                    onClick={() => toggleExperience(index)}>{m.isOpen ? t("experiences-button-show-less") : t("experiences-button-show-more")}</button>
                  </div>
 
                 <div className="flex flex-col justify-start text-left">
@@ -123,7 +127,7 @@ export default function Experiences() {
                 <div className="flex flex-col items-start pr-5">
                     <ul className="pl-8 mx-2">
                         <li key={m.details.description} className='text-custom-p-fs text-left mt-1 mb-2'>{m.details.description}</li>
-                        <li key={m.details.languages} className='text-custom-p-fs text-left mb-2'>Språk: {m.details.languages} </li>
+                        <li key={m.details.languages} className='text-custom-p-fs text-left mb-2'>{t("experiences-languages")} {m.details.languages} </li>
                     </ul>
                 </div>
             )}

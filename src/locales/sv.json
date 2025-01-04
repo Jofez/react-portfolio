@@ -1,0 +1,20 @@
+{
+    "change-language": "Välj språk",
+    "welcome": "Välkommen till min lilla sida",
+    "profile-title": "Systemutvecklare",
+    "profile-email-text": "Maila mig!",
+    "profile-about": "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i JavaScript-ramverk som t.ex. React",
+    "portfolio-description": "Hemsida för att visa upp erfarenheter och profil, med fokus på front-end-tekniker.",
+    "experiences-button-show-more": "Visa mer",
+    "experiences-button-show-less": "Visa mindre",
+    "experiences-languages": "Språk",
+    "experiences-1-title": "Apputvecklare",
+    "experiences-1-location": "Örebro, Sverige",
+    "experiences-1-details-description": "Under femte terminen på min universitetsutbildning arbetade jag under kursen Systemutvecklingsprojekt på Bonliva. Var med och utvecklade en mobilapplikation för tidrapportering i React Native",
+    "experiences-2-title": "Systemutvecklare",
+    "experiences-2-location": "Örebro, Sverige",
+    "experiences-2-details-description": "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet"
+
+
+
+}
