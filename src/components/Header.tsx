@@ -4,35 +4,47 @@ import { HeaderProps } from './Types'
 import { Link } from 'react-router-dom'
 import i18next, { languageResources } from '../i18n/i18next';
 import { useTranslation } from 'react-i18next';
+import  swedishFlag  from "../images/swe_flag.webp"
+import  ukFlag  from "../images/uk_flag.webp"
 
 
 
 
 export default function Header() {
+  const {t, i18n} = useTranslation();
+
 
   const headerItems: HeaderProps[] = [
     {
         id: 'hi-1',
-        name: "Hem",
+        name: t("header-home"),
         link: "/"
     },
     {
         id: 'hi-2',
-        name: "Portfolio",
+        name: t("header-portfolio"),
         link: "/portfolio"
     },
     {
         id: 'hi-3',
-        name: "Erfarenhet",
+        name: t("header-experience"),
         link: "/experiences"
     }
     ,
     {
         id: 'hi-4',
-        name: "Utbildning",
+        name: t("header-education"),
         link: "/education"
     }
 ]
+
+
+
+    const toggleLanguage = () => {
+      const newLanguage = i18n.language === 'en' ? 'sv' : 'en';
+      i18n.changeLanguage(newLanguage);
+      if (isOpen) toggleMenu();
+    };
 
     const [headerTitle, setHeaderTitle] = useState("Josef Holmberg")
     const [isOpen, setIsOpen] = useState(false)
@@ -62,6 +74,24 @@ export default function Header() {
       </nav>
 
       {/* Hamburger Button */}
+
+      {/* TEMP TRANSLATION BUTTON!!! */}
+              
+              <button
+                className="hidden lg:flex w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+                onClick={toggleLanguage}
+                aria-label="Toggle language"
+              > 
+                <div className='flex flex-row justify-evenly items-center'>
+                        {i18n.language === 'en' ?
+                            <img className="w-5 h-5 mr-1" src={swedishFlag} alt='swedish-flag' />
+                            :
+                            <img className="w-5 h-5 mr-1" src={ukFlag} alt='english-flag' />
+                        }
+                  {t("change-language")}
+                </div>
+              </button>
+
       <button
         onClick={toggleMenu}
         className="lg:hidden max-w-lg:flex flex items-center outline-none focus:outline-white"
@@ -90,6 +120,20 @@ export default function Header() {
                     {item.name}
                 </Link>
             )}
+            <button
+              className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+              onClick={toggleLanguage}
+              aria-label="Toggle language"
+              > 
+                <div className='flex flex-row justify-evenly items-center'>
+                        {i18n.language === 'en' ?
+                            <img className="w-5 h-5" src={swedishFlag} alt='swedish-flag' />
+                            :
+                            <img className="w-5 h-5" src={ukFlag} alt='english-flag' />
+                        }
+                  {t("change-language")}
+                </div>
+              </button>
           
           </div>
         </nav>

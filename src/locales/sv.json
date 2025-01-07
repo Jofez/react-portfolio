@@ -1,10 +1,16 @@
 {
-    "change-language": "Välj språk",
+    "change-language": "EN",
     "welcome": "Välkommen till min lilla sida",
+
+    "header-home": "Hem",
+    "header-portfolio": "Portfolio",
+    "header-experience": "Erfarenhet",
+    "header-education": "Utbildning",
     "profile-title": "Systemutvecklare",
     "profile-email-text": "Maila mig!",
     "profile-about": "Kandidatexamen i Systemvetenskap från Örebro universitet med fem års erfarenhet i branschen. Styrkorna sitter i Frontend-utveckling i JavaScript-ramverk som t.ex. React",
     "portfolio-description": "Hemsida för att visa upp erfarenheter och profil, med fokus på front-end-tekniker.",
+    "experiences-title": "Erfarenhet",
     "experiences-button-show-more": "Visa mer",
     "experiences-button-show-less": "Visa mindre",
     "experiences-languages": "Språk",
@@ -13,7 +19,29 @@
     "experiences-1-details-description": "Under femte terminen på min universitetsutbildning arbetade jag under kursen Systemutvecklingsprojekt på Bonliva. Var med och utvecklade en mobilapplikation för tidrapportering i React Native",
     "experiences-2-title": "Systemutvecklare",
     "experiences-2-location": "Örebro, Sverige",
-    "experiences-2-details-description": "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet"
+    "experiences-2-details-description": "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet",
+    "experiences-3-title": "Webbutvecklare",
+    "experiences-3-location": "Örebro, Sverige",
+    "experiences-3-details-description": "Nyutveckling och förvaltning av webbsidor med CMS:erna Sitevision och Optimizely. Visualisering av data i plattformen Ignition.",
+    "certificates-title": "Certifikat",
+    "certificates-show": "Visa certifikat",
+    "competences-title": "Kompetenser",
+    "competences-languages": "Språk",
+    "competences-tools": "Verktyg",
+    "competences-cms": "CMS",
+    "education-title": "Utbildning",
+    "education-1-level": "Gymnasieexamen",
+    "education-1-program": "Systemvetenskapliga programmet",
+    "education-2-school": "Örebro universitet",
+    "education-2-level": "Kandidatexamen",
+    "education-2-program": "Systemvetenskapliga programmet",
+    "modal-button": "Se senaste Release Notes",
+    "modal-button-close": "Stäng",
+    "modal-new-features": "Nya Features",
+    "modal-date": "Datum:",
+    "modal-1-feature-1-desc": "La till Release Notes-modul",
+    "modal-1-feature-2-desc": "La till möjlighet att ändra språk"
+
 
 
 

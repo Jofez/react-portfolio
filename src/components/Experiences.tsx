@@ -16,19 +16,21 @@ import { useTranslation } from 'react-i18next';
 export default function Experiences() {
 
     const {t, i18n} = useTranslation();
+    const [experiences, setExperiences] = useState<ExperienceProps[]>([]);
 
-    const initialExperiences: ExperienceProps[] = [
+    const updateExperiences = () => {
+        setExperiences([
         {
             id: 3,
             company: "HiQ",
             logo: hiqLogo,
-            title: "Webbutvecklare",
+            title: t("experiences-3-title"),
             fromDate: new Date("2022-09"),
             toDate: new Date("2024-11"),
-            location: "Örebro, Sweden",
+            location: t("experiences-3-location"),
             isOpen: false,
             details: { 
-                description: "Nyutveckling och förvaltning av webbsidor med CMS:erna Sitevision och Optimizely. Visualisering av data i plattformen Ignition.", 
+                description: t("experiences-3-details-description"), 
                 languages: "HTML, SCSS, JavaScript, Vue, React, C#, .NET, Python" 
             } 
         },
@@ -36,13 +38,13 @@ export default function Experiences() {
             id: 2,
             company: "Nexer Group",
             logo: nexerLogo,
-            title: "Systemutvecklare",
+            title: t("experiences-2-title"),
             fromDate: new Date("2020-01"),
             toDate: new Date("2022-09"),
-            location: "Örebro, Sweden",
+            location: t("experiences-2-location"),
             isOpen: false,
             details: { 
-                description: "Arbetade med underhållssystemet IBM Maximo som utvecklades och konfigurerades till kunder. Var även med och utvecklade förenklade webappar av Maximos funktionalitet", 
+                description: t("experiences-2-details-description"), 
                 languages: "HTML, CSS, Javascript, Lit-elements, REST API" 
             }
         },
@@ -60,12 +62,13 @@ export default function Experiences() {
                 languages: "HTML, CSS, Javascript, React Native" 
             }
         }
-    ]
+    ]);
+    };
 
 
 
-    const [title, setTitle] = useState("Erfarenhet")
-    const [experiences, setExperiences] = useState<ExperienceProps[]>(initialExperiences);
+    const [title, setTitle] = useState(t("experiences-title"))
+
 
     const toggleExperience = (index: number) => {
         setExperiences(prevExperiences =>
@@ -85,7 +88,6 @@ export default function Experiences() {
           link.href = experience.logo; // Bild-URL
           head.appendChild(link);
         });
-      
         return () => {
           // Rensa bort preload-links när komponenten unmountas
           experiences.forEach(() => {
@@ -95,11 +97,25 @@ export default function Experiences() {
         };
       }, []);
 
+      useEffect(() => {
+        updateExperiences(); // Initial rendering
+        setTitle(t("experiences-title"));
+        // Lyssna på språkändringar
+        const handleLanguageChange = () => updateExperiences();
+    
+        i18next.on("languageChanged", handleLanguageChange); // Registrera lyssnaren för språkändring
+    
+        // Rensa lyssnaren vid avmontering
+        return () => {
+          i18next.off("languageChanged", handleLanguageChange);
+        };
+      }, [i18next]);
+
 
   return (
     <>
     <div className='animate-fadeInSlow flex flex-col justify-between  gap-4 lg:gap-7' >
-    <h1 className='text-custom-title-fs'>{title}</h1>
+    <h1 className='text-custom-title-fs'>{t("experiences-title")}</h1>
     
     {experiences.map((m, index) => 
         <div key={m.id} 
@@ -127,12 +143,13 @@ export default function Experiences() {
                 <div className="flex flex-col items-start pr-5">
                     <ul className="pl-8 mx-2">
                         <li key={m.details.description} className='text-custom-p-fs text-left mt-1 mb-2'>{m.details.description}</li>
-                        <li key={m.details.languages} className='text-custom-p-fs text-left mb-2'>{t("experiences-languages")} {m.details.languages} </li>
+                        <li key={m.details.languages} className='text-custom-p-fs text-left mb-2'>{t("experiences-languages")}: {m.details.languages} </li>
                     </ul>
                 </div>
             )}
         </div>
       )}
+
 
       <Certificates />
 
