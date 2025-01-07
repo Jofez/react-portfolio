@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { CompetenceProps } from './Types'
+import i18next, { languageResources } from '../i18n/i18next';
+import { useTranslation } from 'react-i18next';
 
 
     const competences: CompetenceProps[] = [
@@ -109,16 +111,16 @@ import { CompetenceProps } from './Types'
     ]
 
 export default function Competences() {
-    const [title, setTitle] = useState("Kompetenser") 
+    const {t, i18n} = useTranslation();
 
   return (
     <>
-    <h2 className='text-custom-title-fs'>{title}</h2>
+    <h2 className='text-custom-title-fs'>{t("competences-title")}</h2>
     <div className='max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] mt-0 mb-2 mx-2 py-2'
     >
                 <div className="m-0">
 
-                    <h3 className='font-bold text-custom-heading-fs'>Språk:  </h3>
+                    <h3 className='font-bold text-custom-heading-fs'>{t("competences-languages")}:  </h3>
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0" >
                         <br />
                             {competences.filter(c => c.type === "Language").map(fi => (
@@ -130,7 +132,7 @@ export default function Competences() {
                         ))}
                     </div>
 
-                    <h3 className='font-bold text-custom-heading-fs'>Verktyg:  </h3>
+                    <h3 className='font-bold text-custom-heading-fs'>{t("competences-tools")}:  </h3>
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "Tool").map(fi => (
                         <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 " 
@@ -141,7 +143,7 @@ export default function Competences() {
                     ))}
                     </div>
 
-                    <h3 className='font-bold text-custom-heading-fs'>CMS:  </h3>
+                    <h3 className='font-bold text-custom-heading-fs'>{t("competences-cms")}:  </h3>
                     <div className="flex flex-row justify-center flex-wrap gap-y-0 gap-x-2 px-2 py-0">
                             {competences.filter(c => c.type === "CMS").map(fi => (
                         <p className="text-custom-subheading-fs bg-white text-primary-darkgreen border-[3px] border-transparent rounded-[5px] px-1 py-1 mx-0 my-2 "

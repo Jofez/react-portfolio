@@ -29,9 +29,14 @@ module.exports = {
         'custom-heading-fs': '1.5rem',
         'custom-subheading-fs': '1.25rem',
         'custom-p-fs': '1rem',
+        'custom-p14-fs': '.875rem',
+        'custom-p12-fs': '.75rem'
       },
       transform: {
         'translate-3d': 'translate3d(0px, 0px, 0.1px)'
+      },
+      listStyleType: {
+        square: 'square'
       }
     },
   },

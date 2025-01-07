@@ -78,3 +78,16 @@ export type FooterLinkProps = {
     logo: string,
     link: string
 }
+
+export type ReleaseNoteFeaturesProps = {
+    id: string,
+    description: string
+}
+
+export type ReleaseNotesProps = {
+    id: string,
+    version: string,
+    date: string,
+    features: ReleaseNoteFeaturesProps[]
+
+}
