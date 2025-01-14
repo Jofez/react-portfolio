@@ -6,27 +6,51 @@ import { useTranslation } from 'react-i18next';
 export default function ModalWithoutPortal() {
     const [showModal, setShowModal] = useState(false);
     const {t, i18n} = useTranslation();
-    const releaseNotes: ReleaseNotesProps[] = [
-        {
-            id: "1",
-            version: "1.1.0",
-            date: "2025-01-07",
-            features: [{
-                id: "f1",
-                description: t("modal-1-feature-1-desc"),
+    const [releaseNotes, setReleaseNotes] = useState<ReleaseNotesProps[]>([]);
+
+
+    const updateReleaseNotes = () => {
+        setReleaseNotes([
+            {
+                id: "1",
+                version: "1.1.0",
+                date: "2025-01-07",
+                features: [{
+                    id: "f1",
+                    description: t("modal-1-feature-1-desc"),
                 },
                 {
-                id: "f2",
-                description: t("modal-1-feature-2-desc")
+                    id: "f2",
+                    description: t("modal-1-feature-2-desc")
                 },]
-        }
-    ]
+            }
+        ])
+    }
+    
 
     const [title, setTitle] = useState("Release Notes");
     const [version, setVersion] = useState("Version:");
     const [newFeatures, setNewFeatures] = useState(t("modal-new-features"));
     const [date, setDate] = useState(t("modal-date"));
     const [close, setClose] = useState(t("modal-button-close"));
+
+    useEffect(() => {
+        updateReleaseNotes();
+
+        const handleLanguageChange = () => {
+            updateReleaseNotes();
+            setNewFeatures(t("modal-new-features"))
+            setDate(t("modal-date"));
+            setClose(t("modal-button-close"));
+        } 
+        i18next.on("languageChanged", handleLanguageChange); // Registrera lyssnaren för språkändring
+        
+            // Rensa lyssnaren vid avmontering
+        return () => {
+            i18next.off("languageChanged", handleLanguageChange);
+        };
+
+    }, [i18next, t])
 
   return (
     <>
