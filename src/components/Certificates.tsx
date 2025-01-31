@@ -42,7 +42,7 @@ export default function Certificates() {
 
         {certificates.map((c, index) => 
         <div key={index} 
-            className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] mt-0 mb-2 mx-2 pb-2"
+            className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-border rounded-[3px] mt-0 mb-2 mx-2 pb-2"
         >
             <div className="flex justify-between flex-row-reverse" >
                 <div className="flex flex-col justify-between m-1">

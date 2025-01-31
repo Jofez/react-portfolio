@@ -46,12 +46,12 @@ export default function EducationCard() {
     <>
     <div className="flex justify-center flex-col-reverse gap-7 mb-7 max-w-lg ">
         {education.map((edu, index) => 
-            <div className="flex flex-col gap-4 lg:w-[500px] h-full  border-[3px] border-white rounded-[3px] px-5 pt-2 pb-2 bg-transparent" 
+            <div className="flex flex-col gap-4 lg:w-[500px] h-full  border-[3px] border-border rounded-[3px] px-5 pt-2 pb-2 bg-transparent" 
                 key={index}
             >
               
                 <h2 className='text-custom-heading-fs p-2'>{edu.school}</h2>
-                <hr></hr>
+                <hr className='border-border'></hr>
                 <p className='text-custom-subheading-fs' >{edu.program}</p>
                 <p className='text-custom-p-fs' >{edu.level}</p>
                 <p>{formatDate(edu.startYear)} - {formatDate(edu.endYear)}</p>

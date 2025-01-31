@@ -31,20 +31,17 @@ export default function Home() {
     
         
 
-        <div className="animate-fadeInSlow flex flex-col justify-start  w-4/5 items-center gap-6 md:w-10/12 ">
-            <code className="text-3xl">{profile.name}</code>
+        <div className=" flex flex-col justify-start  w-4/5 items-center gap-6 md:w-10/12 ">
+            <code className="text-3xl ">{profile.name}</code>
             <code className='text-2xl ' >{profile.title}</code>
         </div>
- 
-        <div className="animate-fadeInSlow flex flex-col justify-center w-4/5 items-center gap-11 md:w-10/12">
+        <div className=" flex flex-col justify-center w-4/5 items-center gap-11 md:w-10/12">
             <code>{profile.about}</code>
-                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500" >
+                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-border bg-transparent cursor-pointer hover:bg-hover-purple hover:text-white" >
             <Link className='' to={profile.email}>
                     {profile.emailText}
             </Link>
                 </button>
-            {/* width: 164px;
-                height: 84px; */}
 
         </div>
     </div>

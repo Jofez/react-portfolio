@@ -6,11 +6,16 @@ import i18next, { languageResources } from '../i18n/i18next';
 import { useTranslation } from 'react-i18next';
 import  swedishFlag  from "../images/swe_flag.webp"
 import  ukFlag  from "../images/uk_flag.webp"
+import darkModeIcon from "../images/dark-mode.webp";
+import lightModeIcon from "../images/light-mode.webp";
+
+type Props = {
+  darkMode: boolean;
+  onToggleDarkMode: () => void;
+};
 
 
-
-
-export default function Header() {
+export default function Header({darkMode, onToggleDarkMode}: Props) {
   const {t, i18n} = useTranslation();
 
 
@@ -56,7 +61,7 @@ export default function Header() {
   return (
     <>
     
-    <header className="flex justify-between items-center h-20 bg-header-color text-white px-5 lg:px-16">
+    <header className={`${darkMode ? "dark" : "light"} flex justify-between items-center h-20 bg-header text-white px-5 lg:pl-16`}>
       {/* Header Title */}
       <div className="sm:text-3xl text-2xl">
         {headerTitle}
@@ -76,7 +81,8 @@ export default function Header() {
       {/* Hamburger Button */}
 
       {/* TEMP TRANSLATION BUTTON!!! */}
-              
+          <div className='flex flex-row'>
+
               <button
                 className="hidden lg:flex w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
                 onClick={toggleLanguage}
@@ -91,6 +97,23 @@ export default function Header() {
                   {t("change-language")}
                 </div>
               </button>
+
+              {/* DARK MODE BUTTON  */}
+
+              <button
+                className="hidden justify-center lg:flex w-8 h-10 md:w-10 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+                onClick={onToggleDarkMode}
+                aria-label="Toggle Dark mode"
+                > 
+                <div className='flex flex-row justify-evenly items-center'>
+                {darkMode ?
+                            <img className="w-5 h-5" src={lightModeIcon} alt='light-mode-icon' />
+                            :
+                            <img className="w-5 h-5" src={darkModeIcon} alt='dark-mode-icon' />
+                          }
+                </div>
+              </button>
+        </div>
 
       <button
         onClick={toggleMenu}
@@ -120,6 +143,7 @@ export default function Header() {
                     {item.name}
                 </Link>
             )}
+          <div className='flex flex-row'>
             <button
               className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
               onClick={toggleLanguage}
@@ -134,6 +158,22 @@ export default function Header() {
                   {t("change-language")}
                 </div>
               </button>
+
+              <button
+                className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+                onClick={onToggleDarkMode}
+                aria-label="Toggle Dark mode"
+                > 
+                <div className='flex flex-row justify-evenly items-center'>
+                {darkMode ?
+                            <img className="w-5 h-5" src={lightModeIcon} alt='light-mode-icon' />
+                            :
+                            <img className="w-5 h-5" src={darkModeIcon} alt='dark-mode-icon' />
+                          }
+                </div>
+              </button>
+            </div>
+              
           
           </div>
         </nav>

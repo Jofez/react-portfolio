@@ -17,7 +17,11 @@ module.exports = {
         }
       },
       colors: {
-        'primary-darkgreen': '#034544',
+        'background': "rgba(var(--background))",
+        'primary-text': 'rgba(var(--textus))', // '#034544',
+        'border': 'rgba(var(--textus))',
+        'text-inverted': 'var(--text-inverted)',
+        'header': 'rgba(var(--header))',
         'primary-blue': '#2d4470',
         'hover-blue': '#8ca9ff5c',
         'hover-purple': "#3f2d4d",
@@ -41,4 +45,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class",
 }
