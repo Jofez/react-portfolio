@@ -155,7 +155,7 @@ export default function NewWork() {
             />
           
           <br></br>
-          <button className='border-white border-2 rounded-sm hover:bg-hover-purple transition duration-500' type='submit'>Lägg till</button>
+          <button className='border-white border-2 rounded-sm hover:bg-hover-purple' type='submit'>Lägg till</button>
       </form>
 
       <h2>Erfarenheter:</h2>

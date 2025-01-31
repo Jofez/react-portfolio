@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply transition-colors duration-200;
+}
+
+.light {
+    --background: 239, 239, 239;
+    --textus: 3, 69, 68, 1; 
+    --text-inverted: #FFF;
+    --header: 8, 104, 99;
+}
+
+.dark {
+    --background: 3, 69, 68, 1;
+    --textus: 234, 239, 239;
+    --text-inverted: #034544;
+    --header: 50, 50, 50;
+  }

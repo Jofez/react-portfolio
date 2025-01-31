@@ -114,12 +114,12 @@ export default function Experiences() {
 
   return (
     <>
-    <div className='animate-fadeInSlow flex flex-col justify-between  gap-4 lg:gap-7' >
+    <div className=' flex flex-col justify-between  gap-4 lg:gap-7' >
     <h1 className='text-custom-title-fs'>{t("experiences-title")}</h1>
     
     {experiences.map((m, index) => 
         <div key={m.id} 
-            className='max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] mt-0 mb-2 mx-2'
+            className='max-w-[500px] sm:w-[500px] h-full border-[3px] border-border rounded-[3px] mt-0 mb-2 mx-2'
         >
             {/* px-5 pt-0 pb-2 bg-transparent"  */}
             <div className='flex justify-between flex-row-reverse'>
@@ -127,7 +127,7 @@ export default function Experiences() {
                 <img className='p-2 w-28 h-28 object-cover object-center  transform translate-x-0 translate-y-0 translate-z-[0.1px]'
                 src={m.logo} alt='logo'
                     /> 
-                <button className="text-custom-subheading-fs bg-transparent text-white cursor-pointer border-white border-2 border-solid py-1 px-2 hover:bg-hover-purple focus:bg-hover-purple transition duration-500 mr-2 mb-1"
+                <button className="text-custom-subheading-fs bg-transparent  cursor-pointer border-border border-2 border-solid py-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-text-inverted focus:text-text-inverted mr-2 mb-1"
                     onClick={() => toggleExperience(index)}>{m.isOpen ? t("experiences-button-show-less") : t("experiences-button-show-more")}</button>
                  </div>
 

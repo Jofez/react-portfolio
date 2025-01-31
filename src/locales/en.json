@@ -41,5 +41,6 @@
         "modal-new-features": "New Features",
         "modal-date": "Date:",
         "modal-1-feature-1-desc": "Added Release Notes modal",
-        "modal-1-feature-2-desc": "Added multi language support"
+        "modal-1-feature-2-desc": "Added multi language support",
+        "modal-2-feature-1-desc": "Added Dark Mode functionality"
     }

@@ -45,12 +45,12 @@ export default function Portfolio() {
 
 
     return (
-        <div className="animate-fadeInSlow flex flex-col gap-7">
+        <div className=" flex flex-col gap-7">
             <h1 className='text-custom-title-fs'>
                 {title}
             </h1>
         <div 
-        className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-white rounded-[3px] gap-7 mx-2 mt-0 mb-2 pt-0 px-2 pb-1"
+        className="max-w-[500px] sm:w-[500px] h-full border-[3px] border-border rounded-[3px] gap-7 mx-2 mt-0 mb-2 pt-0 px-2 pb-1"
         >
             {portfolio.map((p, index) => (
                 <div className='flex flex-col gap-5' key={index}>

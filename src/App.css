@@ -1,17 +1,13 @@
 .App {
   text-align: center;
-  background-color: #034544;
-  /* #002c2d; */
-  /* #2d4470; */
-  /* #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(6px + 2vmin);
-  color: white;
   outline: 2px solid white;
+  
 }
 
 .App-link {

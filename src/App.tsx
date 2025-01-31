@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -15,6 +15,11 @@ import { useTranslation } from 'react-i18next';
 
 function App() {
 
+      const [darkMode, setDarkMode] = useState(false);
+  
+      const toggleDarkMode = () => {
+        setDarkMode((prevMode) => !prevMode);
+      };
 
 
   return (
@@ -22,8 +27,11 @@ function App() {
     <Router>
       <I18nextProvider i18n={i18n}>
 
-    <Header />
-      <div className="App">
+    <Header darkMode={darkMode} onToggleDarkMode={toggleDarkMode} />
+
+      <div className={`${darkMode ? "App dark" : "App light"} bg-background text-primary-text`}>
+        
+
           <Routes>
             <Route path="/" element={
               <Home  />
@@ -51,8 +59,7 @@ function App() {
 
           </Routes>
         </div>
-      
-        <Footer />
+        <Footer darkMode={darkMode} />
       </I18nextProvider>
       </Router>
     </>

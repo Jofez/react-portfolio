@@ -16,13 +16,22 @@ export default function ModalWithoutPortal() {
                 version: "1.1.0",
                 date: "2025-01-07",
                 features: [{
-                    id: "f1",
+                    id: "f11",
                     description: t("modal-1-feature-1-desc"),
                 },
                 {
-                    id: "f2",
+                    id: "f12",
                     description: t("modal-1-feature-2-desc")
                 },]
+            },
+            {
+                id: "2",
+                version: "1.2.0",
+                date: "2015-01-31",
+                features: [{
+                    id: "f21",
+                    description: t("modal-2-feature-1-desc")
+                }]
             }
         ])
     }
@@ -55,21 +64,21 @@ export default function ModalWithoutPortal() {
   return (
     <>
       <button
-        className='text-custom-p-fs border-[2px] border-white rounded-[3px] mt-0 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple transition duration-500 mr-2'
+        className='text-custom-p-fs border-[2px] border-border rounded-[3px] mt-0 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-white transition duration-500 mr-2'
         onClick={() => setShowModal(!showModal)}
     >
         {t("modal-button")}
     </button>
       {showModal && (
-        <div className="modal-container flex items-center justify-center z-50">
-          <div className="shadow-md modal absolute z-50 border-2 rounded-[3px] bg-hover-purple w-80 h-40 max-w-md flex flex-col items-center text-left px-4 "
+        <div className="modal-container flex items-center border-border justify-center z-50 text-text-inverted">
+          <div className="shadow-md modal absolute z-50 border-2 rounded-[3px] bg-primary-text w-80 h-64 max-w-md flex flex-col items-center text-left px-4 "
           >
             <h3 className='font-bold text-custom-p-fs'>{title}</h3>
                 {releaseNotes.map(note => 
-                <div>
-                   <p className='text-custom-p14-fs'>{version} {note.version}</p>
+                <div className='mb-2'>
+                   <p className='text-custom-p14-fs font-bold'>{version} {note.version}</p>
                    <p className='text-custom-p12-fs'>{date} {note.date}</p>
-                   <p className='text-center font-bold text-custom-p14-fs'>{newFeatures}</p>
+                   <p className='text-center text-custom-p14-fs'>{newFeatures}</p>
                   
                     {note.features.map((feature) => (
                     <ul className='text-custom-p12-fs list-square'>
@@ -79,7 +88,7 @@ export default function ModalWithoutPortal() {
                 </div>
                 )}
             <button
-                className='bg-primary-darkgreen text-custom-p-fs border-[2px] border-white rounded-[3px] mt-1 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple transition duration-500 mr-2'
+                className='bg-primary-text text-custom-p-fs border-[2px] border-background rounded-[3px] mt-1 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-white  transition duration-500 mr-2'
                 onClick={() => setShowModal(false)}>{close}</button>
           </div>
           <div className="modal-backdrop fixed inset-0 bg-black bg-opacity-50" onClick={() => setShowModal(false)}></div>

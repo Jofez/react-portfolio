@@ -4,6 +4,10 @@ import linkedInLogo from "../images/LinkedIn_icon.svg"
 import { FooterLinkProps } from './Types'
 import { Link } from 'react-router-dom'
 
+type Props = {
+    darkMode: Boolean;
+}
+
 
 const footerLinks: FooterLinkProps[] = [
     {
@@ -20,7 +24,7 @@ const footerLinks: FooterLinkProps[] = [
     },
 ]
 
-export default function Footer() {
+export default function Footer({darkMode}: Props) {
 
     const [name, setName] = useState("Josef Holmberg")
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
@@ -33,7 +37,7 @@ export default function Footer() {
 
 
   return (
-    <div className="grid h-60 bg-footer-color"
+    <div className={`${darkMode ? "dark" : "light"} grid h-60 bg-header`}
     >
         <div className="list-none flex justify-center items-center m-0 px-0 py-2"
         >
