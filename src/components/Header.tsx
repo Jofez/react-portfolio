@@ -58,6 +58,12 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
         setIsOpen(!isOpen)
     }
 
+    const toggleDarkMode = () => {
+      onToggleDarkMode();
+      if (isOpen) toggleMenu();
+      
+    }
+
   return (
     <>
     
@@ -84,7 +90,7 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
           <div className='flex flex-row'>
 
               <button
-                className="hidden lg:flex w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+                className="hidden lg:flex w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple focus:bg-hover-purple transition duration-500"
                 onClick={toggleLanguage}
                 aria-label="Toggle language"
               > 
@@ -101,8 +107,8 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
               {/* DARK MODE BUTTON  */}
 
               <button
-                className="hidden justify-center lg:flex w-8 h-10 md:w-10 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
-                onClick={onToggleDarkMode}
+                className="hidden justify-center lg:flex w-8 h-10 md:w-10 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple focus:bg-hover-purple transition duration-500"
+                onClick={toggleDarkMode}
                 aria-label="Toggle Dark mode"
                 > 
                 <div className='flex flex-row justify-evenly items-center'>
@@ -132,7 +138,7 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className={`"lg:hidden z-10 border-b border-white absolute top-20 left-0 w-full bg-header-color text-white shadow-lg 
+        <nav className={`"lg:hidden z-10 border-b border-white absolute top-20 left-0 w-full bg-header text-white shadow-lg 
             transition-all duration-1000 ease-in-out transform ${ isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
     }`}>
           <div className="flex flex-col items-center space-y-4 py-4 gap-7">
@@ -145,7 +151,7 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
             )}
           <div className='flex flex-row'>
             <button
-              className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
+              className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple focus:bg-hover-purple transition duration-500"
               onClick={toggleLanguage}
               aria-label="Toggle language"
               > 
@@ -160,8 +166,8 @@ export default function Header({darkMode, onToggleDarkMode}: Props) {
               </button>
 
               <button
-                className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple transition duration-500"
-                onClick={onToggleDarkMode}
+                className="w-16 h-10 md:w-14 md:h-8 text-custom-p-fs p-2 md:p-1 mx-0 my-2 outline-none border-0 border-solid border-white bg-transparent cursor-pointer hover:bg-hover-purple focus:bg-hover-purple transition duration-500"
+                onClick={toggleDarkMode}
                 aria-label="Toggle Dark mode"
                 > 
                 <div className='flex flex-row justify-evenly items-center'>

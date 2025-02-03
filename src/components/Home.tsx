@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div className=" flex flex-col justify-center w-4/5 items-center gap-11 md:w-10/12">
             <code>{profile.about}</code>
-                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-border bg-transparent cursor-pointer hover:bg-hover-purple hover:text-white" >
+                <button className="w-40 h-20 md:w-36 md:h-16 text-custom-heading-fs p-4 md:p-3 mx-0 my-3 outline-none border-4 border-solid border-border bg-transparent cursor-pointer hover:bg-hover-purple focus:bg-hover-purple hover:text-white focus:text-white" >
             <Link className='' to={profile.email}>
                     {profile.emailText}
             </Link>
