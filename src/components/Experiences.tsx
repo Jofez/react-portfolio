@@ -127,7 +127,7 @@ export default function Experiences() {
                 <img className='p-2 w-28 h-28 object-cover object-center  transform translate-x-0 translate-y-0 translate-z-[0.1px]'
                 src={m.logo} alt='logo'
                     /> 
-                <button className="text-custom-subheading-fs bg-transparent  cursor-pointer border-border border-2 border-solid py-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-text-inverted focus:text-text-inverted mr-2 mb-1"
+                <button className="text-custom-subheading-fs bg-transparent  cursor-pointer border-border border-2 border-solid py-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-white focus:text-white mr-2 mb-1"
                     onClick={() => toggleExperience(index)}>{m.isOpen ? t("experiences-button-show-less") : t("experiences-button-show-more")}</button>
                  </div>
 

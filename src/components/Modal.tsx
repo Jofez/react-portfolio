@@ -64,7 +64,7 @@ export default function ModalWithoutPortal() {
   return (
     <>
       <button
-        className='text-custom-p-fs border-[2px] border-border rounded-[3px] mt-0 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-white transition duration-500 mr-2'
+        className='text-custom-p-fs border-[2px] border-border rounded-[3px] mt-0 mb-2 mx-2 y-1 px-2 hover:bg-hover-purple focus:bg-hover-purple hover:text-white focus:text-white transition duration-500 mr-2'
         onClick={() => setShowModal(!showModal)}
     >
         {t("modal-button")}
