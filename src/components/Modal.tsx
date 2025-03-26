@@ -27,11 +27,24 @@ export default function ModalWithoutPortal() {
             {
                 id: "2",
                 version: "1.2.0",
-                date: "2015-01-31",
+                date: "2025-01-31",
                 features: [{
                     id: "f21",
                     description: t("modal-2-feature-1-desc")
                 }]
+            },
+            {
+                id: "3",
+                version: "1.3.0",
+                date: "2025-03-26",
+                features: [{
+                    id: "f31",
+                    description: t("modal-3-feature-1-desc")
+                },
+                {
+                    id: "f32",
+                    description: t("modal-3-feature-2-desc")
+                },]
             }
         ])
     }
@@ -70,8 +83,8 @@ export default function ModalWithoutPortal() {
         {t("modal-button")}
     </button>
       {showModal && (
-        <div className="modal-container flex items-center border-border justify-center z-50 text-text-inverted">
-          <div className="shadow-md modal absolute z-50 border-2 rounded-[3px] bg-primary-text w-80 h-64 max-w-md flex flex-col items-center text-left px-4 "
+        <div className="modal-container flex items-baseline border-border justify-center z-50 text-text-inverted">
+          <div className="shadow-md modal absolute z-50 border-2 rounded-[3px] bg-primary-text w-80 h-fit max-w-md flex flex-col items-center text-left px-4 "
           >
             <h3 className='font-bold text-custom-p-fs'>{title}</h3>
                 {releaseNotes.map(note => 

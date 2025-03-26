@@ -23,6 +23,11 @@
         "experiences-3-title": "Web Developer",
         "experiences-3-location": "Örebro, Sweden",
         "experiences-3-details-description": "Development of websites in both new projects and maintenance using the CMS platforms Sitevision and Optimizely. Data visualization in the Ignition platform.",
+        "experiences-4-company": "Swedish Transport Agency",
+        "experiences-4-title": "Web Developer",
+        "experiences-4-location": "Örebro, Sweden",
+        "experiences-4-details-description": "Development of the Swedish Transport Agency's website using Optimizely CMS.",
+        "experiences-current": "current",
         "certificates-title": "Certificates",
         "certificates-show": "Show certificate",
         "competences-title": "Competences",
@@ -41,5 +46,7 @@
         "modal-date": "Date:",
         "modal-1-feature-1-desc": "Added Release Notes modal",
         "modal-1-feature-2-desc": "Added multi language support",
-        "modal-2-feature-1-desc": "Added Dark Mode functionality"
+        "modal-2-feature-1-desc": "Added Dark Mode functionality",
+        "modal-3-feature-1-desc": "Added new job update!",
+        "modal-3-feature-2-desc": "Added js-confetti"
     }
