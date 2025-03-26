@@ -22,6 +22,11 @@
     "experiences-3-title": "Webbutvecklare",
     "experiences-3-location": "Örebro, Sverige",
     "experiences-3-details-description": "Nyutveckling och förvaltning av webbsidor med CMS:erna Sitevision och Optimizely. Visualisering av data i plattformen Ignition.",
+    "experiences-4-company": "Transportstyrelsen",
+    "experiences-4-title": "Webbutvecklare",
+    "experiences-4-location": "Örebro, Sweden",
+    "experiences-4-details-description": "Utveckling av Transportstyrelsens hemsida med hjälp av CMS:en Optimizely.",
+    "experiences-current": "nuvarande",
     "certificates-title": "Certifikat",
     "certificates-show": "Visa certifikat",
     "competences-title": "Kompetenser",
@@ -40,7 +45,9 @@
     "modal-date": "Datum:",
     "modal-1-feature-1-desc": "La till Release Notes-modul",
     "modal-1-feature-2-desc": "La till möjlighet att ändra språk",
-    "modal-2-feature-1-desc": "La till Dark Mode-funktionalitet"
+    "modal-2-feature-1-desc": "La till Dark Mode-funktionalitet",
+    "modal-3-feature-1-desc": "La till ny jobbuppdatering!",
+    "modal-3-feature-2-desc": "La till js-confetti"
 
 
 

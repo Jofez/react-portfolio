@@ -22,7 +22,7 @@ export type ExperienceProps = {
     logo: string
     title: string
     fromDate: Date
-    toDate: Date
+    toDate?: Date
     location: string
     isOpen: boolean
     details: DetailsProps

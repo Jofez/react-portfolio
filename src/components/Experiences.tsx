@@ -6,20 +6,39 @@ import { ExperienceProps } from './Types'
 import bonlivaLogo from "../images/bonliva_logo.webp"
 import nexerLogo  from "../images/nexer_group_logo.webp"
 import hiqLogo  from "../images/hiq_logo.webp"
+import tsLogo from "../images/TS_logo.webp"
 import i18next, { languageResources } from '../i18n/i18next';
 import { useTranslation } from 'react-i18next';
-
-
+import JSConfetti from 'js-confetti'
 
 
 
 export default function Experiences() {
 
+    const jsConfetti = new JSConfetti();
+
+    jsConfetti.addConfetti({
+        emojis: ['🤠', '⚡️', '💥', '✨', '🚀', '👨‍💻'],
+     })
     const {t, i18n} = useTranslation();
     const [experiences, setExperiences] = useState<ExperienceProps[]>([]);
 
     const updateExperiences = () => {
         setExperiences([
+            {
+                id: 4,
+                company: t("experiences-4-company"),
+                logo: tsLogo,
+                title: t("experiences-4-title"),
+                fromDate: new Date("2025-03"),
+                toDate: undefined,
+                location: t("experiences-4-location"),
+                isOpen: false,
+                details: { 
+                    description: t("experiences-4-details-description"), 
+                    languages: "HTML, SCSS, C#, .NET, SQL" 
+                } 
+            },
         {
             id: 3,
             company: "HiQ",
@@ -134,7 +153,7 @@ export default function Experiences() {
                 <div className="flex flex-col justify-start text-left">
                     <h2 className='text-custom-heading-fs m-0 px-2 pt-2 pb-0'>{m.title}</h2>
                     <p className='text-custom-subheading-fs m-0 pt-1 pr-2 pb-0 pl-5'>{m.company}</p>
-                    <p className='text-custom-p-fs m-0 pt-1 pr-2 pb-0 pl-5'>{formatDate(m.fromDate)} - {formatDate(m.toDate)}</p>
+                    <p className='text-custom-p-fs m-0 pt-1 pr-2 pb-0 pl-5'>{formatDate(m.fromDate)} - {!m.toDate ? t("experiences-current") : formatDate(m.toDate)}</p>
                     <p className='text-custom-p-fs m-0 pt-1 pr-2 pb-0 pl-5'>{m.location}</p>
                 </div>
 
