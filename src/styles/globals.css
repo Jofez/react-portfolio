@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind base is included in src/index.css */
 
 * {
     @apply transition-colors duration-200;
