@@ -36,7 +36,7 @@ export default function Experiences() {
                 isOpen: false,
                 details: { 
                     description: t("experiences-4-details-description"), 
-                    languages: "HTML, SCSS, C#, .NET, SQL" 
+                    languages: "HTML, SCSS, C#, .NET, Blazor, SQL, Javascript " 
                 } 
             },
         {
